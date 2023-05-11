@@ -1,0 +1,63 @@
+Aula Silvio 11/05/2023
+Ellen Bleini de Oliveira                               Matricula: 202202311448
+
+----------------------------------------------------------------------------------
+Alocação Dinâmica de Memória
+----------------------------------------------------------------------------------
+Administrada pelas funções:
+Malloc - Aloca 1 byte 
+Realloc - Mais memória (sizeof)
+Free - Liberar memória alocada por malloc 
+
+Biblioteca em C: stdlib
+__________________________________________________________________________________
+Exemplo:
+----------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr_a;
+    
+    ptr_a = malloc (sizeof(int));
+    //Criar a área necessária para o 01 inteiro e colocar em 'ptr_a' o endereço desta área.
+    
+    if (ptr_a == NULL){
+        printf("Memória insuficciente!\n");
+        exit(1);
+    }
+    printf("Endereço de ptr_a: %p\n", ptr_a);
+    *ptr_a = 90;
+    printf("Contéudo de ptr_a: %d\n", *ptr_a); // Imprime 90
+    free(ptr_a); // Libera a área alocada
+    
+
+    
+}
+__________________________________________________________________________________
+Exemplo 2:
+----------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr_a;
+    
+    ptr_a = malloc (sizeof(int));
+    //Criar a área necessária para o 01 inteiro e colocar em 'ptr_a' o endereço desta área.
+    
+    if (ptr_a == NULL){
+        printf("Memória insuficciente!\n");
+        exit(1);
+    }
+    printf("Endereço de ptr_a: %p\n", ptr_a);
+    *ptr_a = 90;
+    printf("Contéudo de ptr_a: %d\n", *ptr_a); // Imprime 90
+    free(ptr_a); // Libera a área alocada
+    printf("Contéudo de ptr_a: %d\n", *ptr_a);
+
+
+    
+}
